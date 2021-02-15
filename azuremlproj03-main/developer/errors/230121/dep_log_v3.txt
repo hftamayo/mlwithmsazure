@@ -1,0 +1,202 @@
+2021-01-23T19:27:32,500497108+00:00 - iot-server/run 
+2021-01-23T19:27:32,500722307+00:00 - gunicorn/run 
+2021-01-23T19:27:32,502142501+00:00 - nginx/run 
+2021-01-23T19:27:32,502862599+00:00 - rsyslog/run 
+/usr/sbin/nginx: /azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/libcrypto.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/libcrypto.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/libssl.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/libssl.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/libssl.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+rsyslogd: /azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/libuuid.so.1: no version information available (required by rsyslogd)
+EdgeHubConnectionString and IOTEDGE_IOTHUBHOSTNAME are not set. Exiting...
+2021-01-23T19:27:32,674681921+00:00 - iot-server/finish 1 0
+2021-01-23T19:27:32,676402914+00:00 - Exit code 1 is normal. Not restarting iot-server.
+Starting gunicorn 19.9.0
+Listening at: http://127.0.0.1:31311 (14)
+Using worker: sync
+worker timeout is set to 300
+Booting worker with pid: 42
+SPARK_HOME not set. Skipping PySpark Initialization.
+Generating new fontManager, this may take some time...
+Initializing logger
+2021-01-23 19:27:34,135 | root | INFO | Starting up app insights client
+Starting up app insights client
+2021-01-23 19:27:34,135 | root | INFO | Starting up request id generator
+Starting up request id generator
+2021-01-23 19:27:34,135 | root | INFO | Starting up app insight hooks
+Starting up app insight hooks
+2021-01-23 19:27:34,135 | root | INFO | Invoking user's init function
+Invoking user's init function
+2021-01-23 19:27:36,925 | azureml.core | WARNING | Failure while loading azureml_run_type_providers. Failed to load entrypoint automl = azureml.train.automl.run:AutoMLRun._from_run_dto with exception cannot import name 'RunType'.
+Failure while loading azureml_run_type_providers. Failed to load entrypoint automl = azureml.train.automl.run:AutoMLRun._from_run_dto with exception cannot import name 'RunType'.
+2021-01-23 19:27:36,972 | root | INFO | Users's init has completed successfully
+Users's init has completed successfully
+2021-01-23 19:27:37,039 | root | INFO | Skipping middleware: dbg_model_info as it's not enabled.
+Skipping middleware: dbg_model_info as it's not enabled.
+2021-01-23 19:27:37,039 | root | INFO | Skipping middleware: dbg_resource_usage as it's not enabled.
+Skipping middleware: dbg_resource_usage as it's not enabled.
+2021-01-23 19:27:37,040 | root | INFO | Scoring timeout is found from os.environ: 60000 ms
+Scoring timeout is found from os.environ: 60000 ms
+2021-01-23 19:27:45,116 | root | INFO | 200
+200
+127.0.0.1 - - [23/Jan/2021:19:27:45 +0000] "GET /swagger.json HTTP/1.0" 200 2338 "-" "Go-http-client/1.1"
+2021-01-23 19:27:56,730 | root | INFO | 200
+200
+127.0.0.1 - - [23/Jan/2021:19:27:56 +0000] "GET /swagger.json HTTP/1.0" 200 2338 "-" "Go-http-client/1.1"
+2021-01-23 19:28:21,425 | root | INFO | Validation Request Content-Type
+Validation Request Content-Type
+2021-01-23 19:28:21,425 | root | INFO | 	Host: localhost:5001
+	Host: localhost:5001
+2021-01-23 19:28:21,425 | root | INFO | 	X-Real-Ip: 127.0.0.1
+	X-Real-Ip: 127.0.0.1
+2021-01-23 19:28:21,425 | root | INFO | 	X-Forwarded-For: 127.0.0.1
+	X-Forwarded-For: 127.0.0.1
+2021-01-23 19:28:21,426 | root | INFO | 	X-Forwarded-Proto: http
+	X-Forwarded-Proto: http
+2021-01-23 19:28:21,426 | root | INFO | 	Connection: close
+	Connection: close
+2021-01-23 19:28:21,426 | root | INFO | 	Content-Length: 470
+	Content-Length: 470
+2021-01-23 19:28:21,426 | root | INFO | 	User-Agent: python-requests/2.25.0
+	User-Agent: python-requests/2.25.0
+2021-01-23 19:28:21,426 | root | INFO | 	Accept: */*
+	Accept: */*
+2021-01-23 19:28:21,426 | root | INFO | 	Accept-Encoding: gzip, deflate
+	Accept-Encoding: gzip, deflate
+2021-01-23 19:28:21,426 | root | INFO | 	Content-Type: application/json
+	Content-Type: application/json
+2021-01-23 19:28:21,426 | root | INFO | 	X-Ms-Request-Id: 2b0ea020-15b8-4b24-96a0-8bfa222b3b11
+	X-Ms-Request-Id: 2b0ea020-15b8-4b24-96a0-8bfa222b3b11
+2021-01-23 19:28:21,426 | root | INFO | Scoring Timer is set to 60.0 seconds
+Scoring Timer is set to 60.0 seconds
+2021-01-23 19:28:21,428 | root | ERROR | Encountered Exception: Traceback (most recent call last):
+  File "/var/azureml-server/app.py", line 239, in run_scoring
+    response = invoke_user_with_timer(service_input, request_headers)
+  File "/var/azureml-server/app.py", line 309, in invoke_user_with_timer
+    result = user_main.run(**params)
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/wrapt/wrappers.py", line 564, in __call__
+    args, kwargs)
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/inference_schema/schema_decorators.py", line 55, in decorator_input
+    args[param_position] = _deserialize_input_argument(args[param_position], param_type, param_name)
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/azureml-server/app.py", line 142, in score_realtime
+    return run_scoring(service_input, request.headers, request.environ.get('REQUEST_ID', '00000000-0000-0000-0000-000000000000'))
+  File "/var/azureml-server/app.py", line 252, in run_scoring
+    raise RunFunctionException(str(exc))
+run_function_exception.RunFunctionException
+
+Encountered Exception: Traceback (most recent call last):
+  File "/var/azureml-server/app.py", line 239, in run_scoring
+    response = invoke_user_with_timer(service_input, request_headers)
+  File "/var/azureml-server/app.py", line 309, in invoke_user_with_timer
+    result = user_main.run(**params)
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/wrapt/wrappers.py", line 564, in __call__
+    args, kwargs)
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/inference_schema/schema_decorators.py", line 55, in decorator_input
+    args[param_position] = _deserialize_input_argument(args[param_position], param_type, param_name)
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/azureml-server/app.py", line 142, in score_realtime
+    return run_scoring(service_input, request.headers, request.environ.get('REQUEST_ID', '00000000-0000-0000-0000-000000000000'))
+  File "/var/azureml-server/app.py", line 252, in run_scoring
+    raise RunFunctionException(str(exc))
+run_function_exception.RunFunctionException
+
+2021-01-23 19:28:21,428 | root | INFO | 500
+500
+127.0.0.1 - - [23/Jan/2021:19:28:21 +0000] "POST /score HTTP/1.0" 500 23 "-" "python-requests/2.25.0"
+Exception in worker process
+Traceback (most recent call last):
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.run()
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 124, in run
+    self.run_for_one(timeout)
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 83, in run_for_one
+    self.wait(timeout)
+  File "/azureml-envs/azureml_fc7e1840225416a471556263041ca33e/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 35, in wait
+    ret = select.select(self.wait_fds, [], [], timeout)
+  File "/var/azureml-server/app.py", line 279, in alarm_handler
+    raise TimeoutException(error_message)
+timeout_exception.TimeoutException
+Worker exiting (pid: 42)
+worker timeout is set to 300
+Booting worker with pid: 65
+SPARK_HOME not set. Skipping PySpark Initialization.
+Initializing logger
+2021-01-23 19:29:23,582 | root | INFO | Starting up app insights client
+Starting up app insights client
+2021-01-23 19:29:23,582 | root | INFO | Starting up request id generator
+Starting up request id generator
+2021-01-23 19:29:23,582 | root | INFO | Starting up app insight hooks
+Starting up app insight hooks
+2021-01-23 19:29:23,582 | root | INFO | Invoking user's init function
+Invoking user's init function
+2021-01-23 19:29:25,620 | azureml.core | WARNING | Failure while loading azureml_run_type_providers. Failed to load entrypoint automl = azureml.train.automl.run:AutoMLRun._from_run_dto with exception cannot import name 'RunType'.
+Failure while loading azureml_run_type_providers. Failed to load entrypoint automl = azureml.train.automl.run:AutoMLRun._from_run_dto with exception cannot import name 'RunType'.
+2021-01-23 19:29:25,653 | root | INFO | Users's init has completed successfully
+Users's init has completed successfully
+2021-01-23 19:29:25,656 | root | INFO | Skipping middleware: dbg_model_info as it's not enabled.
+Skipping middleware: dbg_model_info as it's not enabled.
+2021-01-23 19:29:25,656 | root | INFO | Skipping middleware: dbg_resource_usage as it's not enabled.
+Skipping middleware: dbg_resource_usage as it's not enabled.
+2021-01-23 19:29:25,659 | root | INFO | Scoring timeout is found from os.environ: 60000 ms
+Scoring timeout is found from os.environ: 60000 ms
+2021-01-23 19:32:14,983 | root | INFO | 200
+200
+127.0.0.1 - - [23/Jan/2021:19:32:14 +0000] "GET /swagger.json HTTP/1.0" 200 2338 "-" "Go-http-client/1.1"
+2021-01-23 19:32:15,611 | root | INFO | 200
+200
+127.0.0.1 - - [23/Jan/2021:19:32:15 +0000] "GET /swagger.json HTTP/1.0" 200 2338 "-" "Go-http-client/1.1"
+127.0.0.1 - - [23/Jan/2021:19:51:36 +0000] "POST /boaform/admin/formLogin HTTP/1.0" 404 232 "http://13.85.195.109:80/admin/login.asp" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0"
+2021-01-23 20:04:55,505 | root | INFO | Validation Request Content-Type
+Validation Request Content-Type
+2021-01-23 20:04:55,505 | root | INFO | 	Host: localhost:5001
+	Host: localhost:5001
+2021-01-23 20:04:55,505 | root | INFO | 	X-Real-Ip: 127.0.0.1
+	X-Real-Ip: 127.0.0.1
+2021-01-23 20:04:55,506 | root | INFO | 	X-Forwarded-For: 127.0.0.1
+	X-Forwarded-For: 127.0.0.1
+2021-01-23 20:04:55,506 | root | INFO | 	X-Forwarded-Proto: http
+	X-Forwarded-Proto: http
+2021-01-23 20:04:55,506 | root | INFO | 	Connection: close
+	Connection: close
+2021-01-23 20:04:55,506 | root | INFO | 	Content-Length: 461
+	Content-Length: 461
+2021-01-23 20:04:55,506 | root | INFO | 	User-Agent: python-requests/2.25.0
+	User-Agent: python-requests/2.25.0
+2021-01-23 20:04:55,506 | root | INFO | 	Accept: */*
+	Accept: */*
+2021-01-23 20:04:55,506 | root | INFO | 	Accept-Encoding: gzip, deflate
+	Accept-Encoding: gzip, deflate
+2021-01-23 20:04:55,506 | root | INFO | 	Content-Type: application/json
+	Content-Type: application/json
+2021-01-23 20:04:55,506 | root | INFO | 	X-Ms-Request-Id: f1c91a42-add6-44b5-8c5a-b2bde17313a9
+	X-Ms-Request-Id: f1c91a42-add6-44b5-8c5a-b2bde17313a9
+2021-01-23 20:04:55,506 | root | INFO | Scoring Timer is set to 60.0 seconds
+Scoring Timer is set to 60.0 seconds
+2021-01-23 20:04:55,557 | root | INFO | 200
+200
+127.0.0.1 - - [23/Jan/2021:20:04:55 +0000] "POST /score HTTP/1.0" 200 31 "-" "python-requests/2.25.0"
+2021-01-23 20:08:03,699 | root | INFO | 200
+200
+127.0.0.1 - - [23/Jan/2021:20:08:03 +0000] "GET /swagger.json HTTP/1.0" 200 2338 "-" "Go-http-client/1.1"
+2021-01-23 20:08:04,389 | root | INFO | 200
+200
+127.0.0.1 - - [23/Jan/2021:20:08:04 +0000] "GET /swagger.json HTTP/1.0" 200 2338 "-" "Go-http-client/1.1"

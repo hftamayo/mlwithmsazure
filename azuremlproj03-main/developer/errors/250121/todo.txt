@@ -1,0 +1,1 @@
+best_model = best_run.register_model('best_hyper_model', model_path = 'outputs/model.joblib') 

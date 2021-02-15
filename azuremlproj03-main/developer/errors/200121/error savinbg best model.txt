@@ -1,0 +1,47 @@
+WARNING:root:The version of the SDK does not match the version the model was trained on.
+WARNING:root:The consistency in the result may not be guaranteed.
+WARNING:root:Package:azureml-automl-core, training version:1.20.0, current version:1.19.0
+Package:azureml-automl-runtime, training version:1.20.0, current version:1.19.0
+Package:azureml-core, training version:1.20.0, current version:1.19.0
+Package:azureml-dataprep, training version:2.7.2, current version:2.6.1
+Package:azureml-dataprep-native, training version:27.0.0, current version:26.0.0
+Package:azureml-dataprep-rslex, training version:1.5.0, current version:1.4.0
+Package:azureml-dataset-runtime, training version:1.20.0, current version:1.19.0.post1
+Package:azureml-defaults, training version:1.20.0, current version:1.19.0
+Package:azureml-interpret, training version:1.20.0, current version:1.19.0
+Package:azureml-pipeline-core, training version:1.20.0, current version:1.19.0
+Package:azureml-telemetry, training version:1.20.0, current version:1.19.0
+Package:azureml-train-automl-client, training version:1.20.0, current version:1.19.0
+Package:azureml-train-automl-runtime, training version:1.20.0, current version:1.19.0
+WARNING:root:Please ensure the version of your local conda dependencies match the version on which your model was trained in order to properly retrieve your model.
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+<ipython-input-19-ab94968f92de> in <module>
+      1 # obtaining best run and fitted model
+----> 2 brmodel, fmodel = exprun.get_output()
+      3 
+      4 # Print the best run
+      5 print(brmodel)
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/train/automl/run.py in get_output(self, iteration, metric, return_onnx_model, return_split_onnx_model, **kwargs)
+    692                     fitted_model = _download_automl_onnx_model(curr_run, model_name)
+    693                 else:
+--> 694                     fitted_model = _download_automl_model(curr_run, model_name)
+    695 
+    696             return curr_run, fitted_model
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/train/automl/_model_download_utilities.py in _download_automl_model(run, model_name)
+     85             # Pass through any exceptions from loading the model.
+     86             # Try is used here to ensure we can cleanup the side effect of model downlad.
+---> 87             model = _load_automl_model(model_path)
+     88             if model is None:
+     89                 # If we can retrieve the automl runtime version, we do so we can inform the user what to install.
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/train/automl/_model_download_utilities.py in _load_automl_model(model_path)
+    151         import azureml.train.automl.runtime
+    152         with open(model_path, "rb") as model_file:
+--> 153             fitted_model = pickle.load(model_file)  # type: Optional[Any]
+    154             return fitted_model
+    155     except ImportError as e:
+
+ModuleNotFoundError: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'

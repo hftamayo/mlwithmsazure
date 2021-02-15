@@ -1,0 +1,262 @@
+2021-01-20 12:36:29.497 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:36:29.502 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:36:29.522 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-01-20 12:36:29.664 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=141.6[ms]
+2021-01-20 12:36:29.664 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=161.39[ms]
+2021-01-20 12:36:29.665 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-01-20 12:36:30.205 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:36:30.233 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:36:30.234 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=568.7[ms]
+2021-01-20 12:36:30.234 - CRITICAL - 19483 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 694, in get_output
+    fitted_model = _download_automl_model(curr_run, model_name)
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:36:30.235 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=738.1[ms]
+2021-01-20 12:36:55.918 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:36:55.930 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:36:55.934 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-01-20 12:36:56.084 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=150.34[ms]
+2021-01-20 12:36:56.086 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=155.82[ms]
+2021-01-20 12:36:56.086 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-01-20 12:36:56.655 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:36:56.681 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:36:56.682 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=595.11[ms]
+2021-01-20 12:36:56.682 - CRITICAL - 19483 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 694, in get_output
+    fitted_model = _download_automl_model(curr_run, model_name)
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:36:56.683 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=764.94[ms]
+2021-01-20 12:46:31.892 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:46:31.896 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:46:31.914 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-01-20 12:46:32.029 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=115.07[ms]
+2021-01-20 12:46:32.030 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=133.06[ms]
+2021-01-20 12:46:32.030 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-01-20 12:46:32.697 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:46:32.731 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:46:32.731 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=701.07[ms]
+2021-01-20 12:46:32.732 - CRITICAL - 19483 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 694, in get_output
+    fitted_model = _download_automl_model(curr_run, model_name)
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:46:32.732 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=840.49[ms]
+2021-01-20 12:47:09.351 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:47:09.364 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:47:09.377 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-01-20 12:47:09.537 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=159.88[ms]
+2021-01-20 12:47:09.537 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=172.91[ms]
+2021-01-20 12:47:09.538 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-01-20 12:47:10.144 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:47:10.173 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:47:10.174 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=636.49[ms]
+2021-01-20 12:47:10.179 - CRITICAL - 19483 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 694, in get_output
+    fitted_model = _download_automl_model(curr_run, model_name)
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:47:10.179 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=828.0[ms]
+2021-01-20 12:53:10.632 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:53:10.646 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:53:10.658 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-01-20 12:53:11.048 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=390.36[ms]
+2021-01-20 12:53:11.048 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=402.49[ms]
+2021-01-20 12:53:11.049 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-01-20 12:53:12.247 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:53:12.266 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:53:12.266 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=1216.76[ms]
+2021-01-20 12:53:12.267 - CRITICAL - 19483 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 694, in get_output
+    fitted_model = _download_automl_model(curr_run, model_name)
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:53:12.267 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=1634.5[ms]
+2021-01-20 12:56:35.727 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:56:35.740 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:56:35.746 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-01-20 12:56:35.892 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=146.6[ms]
+2021-01-20 12:56:35.893 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=152.72[ms]
+2021-01-20 12:56:35.894 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-01-20 12:56:36.678 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:56:36.729 - CRITICAL - 19483 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:56:36.729 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=835.67[ms]
+2021-01-20 12:56:36.730 - CRITICAL - 19483 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.automl.runtime._ml_engine.featurizer_suggestion'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 694, in get_output
+    fitted_model = _download_automl_model(curr_run, model_name)
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+
+ExceptionTarget: Unspecified
+2021-01-20 12:56:36.730 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=1003.63[ms]
+2021-01-20 12:59:34.954 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:59:34.959 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-01-20 12:59:34.977 - INFO - 19483 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-01-20 12:59:35.126 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=148.74[ms]
+2021-01-20 12:59:35.126 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=167.75[ms]
+2021-01-20 12:59:35.127 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-01-20 12:59:35.897 - INFO - 19483 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping enabled: False
+2021-01-20 12:59:35.897 - INFO - 19483 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping timeout: 86400
+2021-01-20 12:59:35.954 - INFO - 19483 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=826.19[ms]
+2021-01-20 12:59:35.954 - INFO - 19483 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1000.16[ms]

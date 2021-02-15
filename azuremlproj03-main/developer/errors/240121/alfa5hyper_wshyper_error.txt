@@ -1,0 +1,56 @@
+2021-01-25T04:43:12,058991266+00:00 - iot-server/run 
+2021-01-25T04:43:12,060862662+00:00 - gunicorn/run 
+2021-01-25T04:43:12,061365061+00:00 - nginx/run 
+2021-01-25T04:43:12,060942262+00:00 - rsyslog/run 
+/usr/sbin/nginx: /azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/libcrypto.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/libcrypto.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/libssl.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/libssl.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+/usr/sbin/nginx: /azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/libssl.so.1.0.0: no version information available (required by /usr/sbin/nginx)
+rsyslogd: /azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/libuuid.so.1: no version information available (required by rsyslogd)
+EdgeHubConnectionString and IOTEDGE_IOTHUBHOSTNAME are not set. Exiting...
+2021-01-25T04:43:12,207377232+00:00 - iot-server/finish 1 0
+2021-01-25T04:43:12,209075128+00:00 - Exit code 1 is normal. Not restarting iot-server.
+Starting gunicorn 19.9.0
+Listening at: http://127.0.0.1:31311 (15)
+Using worker: sync
+worker timeout is set to 300
+Booting worker with pid: 41
+SPARK_HOME not set. Skipping PySpark Initialization.
+Generating new fontManager, this may take some time...
+Initializing logger
+2021-01-25 04:43:14,487 | root | INFO | Starting up app insights client
+2021-01-25 04:43:14,488 | root | INFO | Starting up request id generator
+2021-01-25 04:43:14,488 | root | INFO | Starting up app insight hooks
+2021-01-25 04:43:14,488 | root | INFO | Invoking user's init function
+2021-01-25 04:43:14,488 | root | ERROR | User's init function failed
+/azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+2021-01-25 04:43:14,495 | root | ERROR | Encountered Exception Traceback (most recent call last):
+  File "/var/azureml-server/aml_blueprint.py", line 176, in register
+    main.init()
+  File "/var/azureml-app/main.py", line 35, in init
+    driver_module.init()
+  File "/var/azureml-app/score.py", line 11, in init
+    model_path = Model.get_model_path('outputs/bhypermodel.joblib')
+  File "/azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/python3.6/site-packages/azureml/core/model.py", line 797, in get_model_path
+    return Model._get_model_path_local(model_name, version)
+  File "/azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/python3.6/site-packages/azureml/core/model.py", line 818, in _get_model_path_local
+    return Model._get_model_path_local_from_root(model_name)
+  File "/azureml-envs/azureml_265db83b0c6014ce472c5de2f0b97e04/lib/python3.6/site-packages/azureml/core/model.py", line 862, in _get_model_path_local_from_root
+    os.getcwd()))
+azureml.exceptions._azureml_exception.ModelNotFoundException: ModelNotFoundException:
+	Message: Model outputs/bhypermodel.joblib not found in cache at azureml-models or in current working directory /var/azureml-app. For more info, set logging level to DEBUG.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Model outputs/bhypermodel.joblib not found in cache at azureml-models or in current working directory /var/azureml-app. For more info, set logging level to DEBUG."
+    }
+}
+
+Worker exiting (pid: 41)
+Shutting down: Master
+Reason: Worker failed to boot.
+2021-01-25T04:43:14,943391576+00:00 - gunicorn/finish 3 0
+2021-01-25T04:43:14,944558774+00:00 - Exit code 3 is not normal. Killing image.

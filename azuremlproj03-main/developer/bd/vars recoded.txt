@@ -1,0 +1,46 @@
+DEPTOOCUHE
+
+ah              1
+santa ana       2
+sonso           3
+chala           4
+la lib          5
+ss              6
+cus             7
+la paz          8
+cab             9
+san vic         10
+usu             11
+smiguel         12
+mor             13
+l u             14
+
+
+sexo	
+masculino       0
+femenino        1
+
+
+
+pracaut	
+si              1
+no              0
+
+
+Tipo de armas	
+arma de fuego           1
+asf x estrangulacion	2
+asf x ahorcadura        3
+asf x sofocacion        4
+asf x sumersion         5
+blanca sin espec        6
+caida provocada         7
+cortante                8
+cortocontundente        9
+cortopunzante           10
+manos y pies            11
+no datos                12
+objeto contundente      13
+lapidado                14
+punzante                15
+quemadura x fuego       16

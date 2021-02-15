@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-8-7b88425f675e> in <module>
+      1 #TODO: Submit your experiment
+----> 2 hyperDrive_run = exphyper.submit(hyperdrive_run_config)
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_jupyter_common/__init__.py in submit(self, config, tags, **kwargs)
+     84 def _experiment_submit_notebook_decorator(original_submit):
+     85     def submit(self, config, tags=None, **kwargs):
+---> 86         run = original_submit(self, config, tags, **kwargs)
+     87         _update_run_created_from(run)
+     88         return run
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/core/experiment.py in submit(self, config, tags, **kwargs)
+    218         submit_func = get_experiment_submit(config)
+    219         with self._log_context("submit config {}".format(config.__class__.__name__)):
+--> 220             run = submit_func(config, self.workspace, self.name, **kwargs)
+    221         if tags is not None:
+    222             run.set_tags(tags)
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/train/hyperdrive/_search.py in search(hyperdrive_config, workspace, experiment_name, **kwargs)
+    160                 return HyperDriveRun(experiment=experiment,
+    161                                      hyperdrive_config=hyperdrive_config,
+--> 162                                      run_id=parent_run_id)
+    163         except ErrorResponseException as e:
+    164             raise TrainingException._with_error(
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/train/hyperdrive/run.py in __init__(self, experiment, run_id, hyperdrive_config)
+     64 
+     65         super().__init__(experiment=experiment, run_id=run_id,
+---> 66                          _user_agent=HyperDriveRun.HYPER_DRIVE_RUN_USER_AGENT)
+     67         if hyperdrive_config is None:
+     68             self._hyperdrive_config = HyperDriveConfig._get_runconfig_from_run_dto(self._client.run_dto)
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/core/run.py in __init__(self, experiment, run_id, outputs, **kwargs)
+    167 
+    168         """
+--> 169         super(Run, self).__init__(experiment, run_id, outputs=outputs, **kwargs)
+    170         self._parent_run = None
+    171 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_run_impl/run_base.py in __init__(self, experiment, run_id, outputs, logs, _run_dto, _worker_pool, _user_agent, _ident, _batch_upload_metrics, py_wd, deny_list, flush_eager, redirect_output_stream, **kwargs)
+     80                     raise
+     81 
+---> 82         py_wd = get_py_wd() if py_wd is None else py_wd
+     83 
+     84         self._client = RunHistoryFacade(self._experiment, self._run_id, RUN_ORIGIN, run_dto=_run_dto,
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/history/_tracking.py in get_py_wd()
+    302 
+    303 def is_batchai():
+--> 304     target_type = os.environ.get("AZUREML_TARGET_TYPE")
+    305     return target_type is not None and target_type.lower() == TARGET_TYPE_BATCH_AI
+    306 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/history/_tracking.py in get(cls)
+    272                 fs_list.append(py_fs)
+    273                 target_type = str(os.environ.get("AZUREML_TARGET_TYPE")).lower()
+--> 274                 logger.debug("Execution target type: {0}".format(target_type))
+    275                 try:
+    276                     from pyspark import SparkContext
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_history/utils/filesystem.py in <module>
+      8 from azureml._restclient.constants import RUN_ORIGIN
+      9 from azureml.exceptions import AzureMLException
+---> 10 from azureml._common.exceptions import AzureMLAggregatedException
+     11 
+     12 
+
+ImportError: cannot import name 'AzureMLAggregatedException'

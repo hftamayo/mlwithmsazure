@@ -1,0 +1,455 @@
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-20-740dfb0ae85a> in <module>
+      1 import joblib
+----> 2 joblib.dump(brmodel,'bhypermodel.joblib')
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in dump(value, filename, compress, protocol, cache_size)
+    503     elif is_filename:
+    504         with open(filename, 'wb') as f:
+--> 505             NumpyPickler(f, protocol=protocol).dump(value)
+    506     else:
+    507         NumpyPickler(filename, protocol=protocol).dump(value)
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in dump(self, obj)
+    407         if self.proto >= 4:
+    408             self.framer.start_framing()
+--> 409         self.save(obj)
+    410         self.write(STOP)
+    411         self.framer.end_framing()
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_list(self, obj)
+    779 
+    780         self.memoize(obj)
+--> 781         self._batch_appends(obj)
+    782 
+    783     dispatch[list] = save_list
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_appends(self, items)
+    806                 write(APPENDS)
+    807             elif n:
+--> 808                 save(tmp[0])
+    809                 write(APPEND)
+    810             # else tmp is empty, and we're done
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    519 
+    520         # Save the reduce() output and finally memoize the object
+--> 521         self.save_reduce(obj=obj, *rv)
+    522 
+    523     def persistent_id(self, obj):
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_reduce(self, func, args, state, listitems, dictitems, obj)
+    632 
+    633         if state is not None:
+--> 634             save(state)
+    635             write(BUILD)
+    636 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    474         f = self.dispatch.get(t)
+    475         if f is not None:
+--> 476             f(self, obj) # Call unbound method with explicit self
+    477             return
+    478 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save_dict(self, obj)
+    819 
+    820         self.memoize(obj)
+--> 821         self._batch_setitems(obj.items())
+    822 
+    823     dispatch[dict] = save_dict
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in _batch_setitems(self, items)
+    845                 for k, v in tmp:
+    846                     save(k)
+--> 847                     save(v)
+    848                 write(SETITEMS)
+    849             elif n:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/joblib/numpy_pickle.py in save(self, obj)
+    293             return
+    294 
+--> 295         return Pickler.save(self, obj)
+    296 
+    297 
+
+/anaconda/envs/azureml_py36/lib/python3.6/pickle.py in save(self, obj, save_persistent_id)
+    494             reduce = getattr(obj, "__reduce_ex__", None)
+    495             if reduce is not None:
+--> 496                 rv = reduce(self.proto)
+    497             else:
+    498                 reduce = getattr(obj, "__reduce__", None)
+
+TypeError: can't pickle _thread.RLock objects

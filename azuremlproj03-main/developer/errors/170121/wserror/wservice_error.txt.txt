@@ -1,0 +1,61 @@
+ERROR:azureml.core.webservice.webservice:Service deployment polling reached non-successful terminal state, current service state: Failed
+Operation ID: 3a41ff9d-0194-4051-8a54-82f6a054228c
+More information can be found using '.get_logs()'
+Error:
+{
+  "code": "AciDeploymentFailed",
+  "message": "Aci Deployment failed with exception: Your container application crashed. This may be caused by errors in your scoring file's init() function.\nPlease check the logs for your container instance: wsp03ht01. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. \nYou can interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\nYou can also try to run image viennaglobal.azurecr.io/azureml/azureml_4f3cee89203e005745d1830c04fe722a locally. Please refer to https://aka.ms/debugimage#service-launch-fails for more information.",
+  "details": [
+    {
+      "code": "CrashLoopBackOff",
+      "message": "Your container application crashed. This may be caused by errors in your scoring file's init() function.\nPlease check the logs for your container instance: wsp03ht01. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. \nYou can interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\nYou can also try to run image viennaglobal.azurecr.io/azureml/azureml_4f3cee89203e005745d1830c04fe722a locally. Please refer to https://aka.ms/debugimage#service-launch-fails for more information."
+    },
+    {
+      "code": "AciDeploymentFailed",
+      "message": "Your container application crashed. Please follow the steps to debug:\n1. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. Please refer to https://aka.ms/debugimage#dockerlog for more information.\n2. If your container application crashed. This may be caused by errors in your scoring file's init() function. You can try debugging locally first. Please refer to https://aka.ms/debugimage#debug-locally for more information.\n3. You can also interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\n4. View the diagnostic events to check status of container, it may help you to debug the issue. {\"restartCount\":3,\"currentState\":{\"state\":\"Waiting\",\"startTime\":null,\"exitCode\":null,\"finishTime\":null,\"detailStatus\":\"CrashLoopBackOff: Back-off restarting failed\"},\"previousState\":{\"state\":\"Terminated\",\"startTime\":\"2021-01-17T12:32:25.885Z\",\"exitCode\":111,\"finishTime\":\"2021-01-17T12:32:31.856Z\",\"detailStatus\":\"Error\"},\"events\":null}"
+    }
+  ]
+}
+
+---------------------------------------------------------------------------
+WebserviceException                       Traceback (most recent call last)
+<ipython-input-28-4ca054e9f762> in <module>
+     10 depcfg = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)
+     11 webservice = Model.deploy(ws, "wsp03ht01", [autobmlp3ht], infcfg, depcfg)
+---> 12 webservice.wait_for_deployment(show_output = True)
+     13 print(webservice.state)
+     14 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/core/webservice/webservice.py in wait_for_deployment(self, show_output, timeout_sec)
+    913                                           'Error:\n'
+    914                                           '{}'.format(self.state, self._operation_endpoint.split('/')[-1],
+--> 915                                                       logs_response, error_response), logger=module_logger)
+    916             print('{} service creation operation finished, operation "{}"'.format(self._webservice_type,
+    917                                                                                   operation_state))
+
+WebserviceException: WebserviceException:
+	Message: Service deployment polling reached non-successful terminal state, current service state: Failed
+Operation ID: 3a41ff9d-0194-4051-8a54-82f6a054228c
+More information can be found using '.get_logs()'
+Error:
+{
+  "code": "AciDeploymentFailed",
+  "message": "Aci Deployment failed with exception: Your container application crashed. This may be caused by errors in your scoring file's init() function.\nPlease check the logs for your container instance: wsp03ht01. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. \nYou can interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\nYou can also try to run image viennaglobal.azurecr.io/azureml/azureml_4f3cee89203e005745d1830c04fe722a locally. Please refer to https://aka.ms/debugimage#service-launch-fails for more information.",
+  "details": [
+    {
+      "code": "CrashLoopBackOff",
+      "message": "Your container application crashed. This may be caused by errors in your scoring file's init() function.\nPlease check the logs for your container instance: wsp03ht01. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. \nYou can interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\nYou can also try to run image viennaglobal.azurecr.io/azureml/azureml_4f3cee89203e005745d1830c04fe722a locally. Please refer to https://aka.ms/debugimage#service-launch-fails for more information."
+    },
+    {
+      "code": "AciDeploymentFailed",
+      "message": "Your container application crashed. Please follow the steps to debug:\n1. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. Please refer to https://aka.ms/debugimage#dockerlog for more information.\n2. If your container application crashed. This may be caused by errors in your scoring file's init() function. You can try debugging locally first. Please refer to https://aka.ms/debugimage#debug-locally for more information.\n3. You can also interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\n4. View the diagnostic events to check status of container, it may help you to debug the issue. {\"restartCount\":3,\"currentState\":{\"state\":\"Waiting\",\"startTime\":null,\"exitCode\":null,\"finishTime\":null,\"detailStatus\":\"CrashLoopBackOff: Back-off restarting failed\"},\"previousState\":{\"state\":\"Terminated\",\"startTime\":\"2021-01-17T12:32:25.885Z\",\"exitCode\":111,\"finishTime\":\"2021-01-17T12:32:31.856Z\",\"detailStatus\":\"Error\"},\"events\":null}"
+    }
+  ]
+}
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Service deployment polling reached non-successful terminal state, current service state: Failed\nOperation ID: 3a41ff9d-0194-4051-8a54-82f6a054228c\nMore information can be found using '.get_logs()'\nError:\n{\n  \"code\": \"AciDeploymentFailed\",\n  \"message\": \"Aci Deployment failed with exception: Your container application crashed. This may be caused by errors in your scoring file's init() function.\\nPlease check the logs for your container instance: wsp03ht01. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. \\nYou can interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\\nYou can also try to run image viennaglobal.azurecr.io/azureml/azureml_4f3cee89203e005745d1830c04fe722a locally. Please refer to https://aka.ms/debugimage#service-launch-fails for more information.\",\n  \"details\": [\n    {\n      \"code\": \"CrashLoopBackOff\",\n      \"message\": \"Your container application crashed. This may be caused by errors in your scoring file's init() function.\\nPlease check the logs for your container instance: wsp03ht01. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. \\nYou can interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\\nYou can also try to run image viennaglobal.azurecr.io/azureml/azureml_4f3cee89203e005745d1830c04fe722a locally. Please refer to https://aka.ms/debugimage#service-launch-fails for more information.\"\n    },\n    {\n      \"code\": \"AciDeploymentFailed\",\n      \"message\": \"Your container application crashed. Please follow the steps to debug:\\n1. From the AML SDK, you can run print(service.get_logs()) if you have service object to fetch the logs. Please refer to https://aka.ms/debugimage#dockerlog for more information.\\n2. If your container application crashed. This may be caused by errors in your scoring file's init() function. You can try debugging locally first. Please refer to https://aka.ms/debugimage#debug-locally for more information.\\n3. You can also interactively debug your scoring file locally. Please refer to https://docs.microsoft.com/azure/machine-learning/how-to-debug-visual-studio-code#debug-and-troubleshoot-deployments for more information.\\n4. View the diagnostic events to check status of container, it may help you to debug the issue. {\\\"restartCount\\\":3,\\\"currentState\\\":{\\\"state\\\":\\\"Waiting\\\",\\\"startTime\\\":null,\\\"exitCode\\\":null,\\\"finishTime\\\":null,\\\"detailStatus\\\":\\\"CrashLoopBackOff: Back-off restarting failed\\\"},\\\"previousState\\\":{\\\"state\\\":\\\"Terminated\\\",\\\"startTime\\\":\\\"2021-01-17T12:32:25.885Z\\\",\\\"exitCode\\\":111,\\\"finishTime\\\":\\\"2021-01-17T12:32:31.856Z\\\",\\\"detailStatus\\\":\\\"Error\\\"},\\\"events\\\":null}\"\n    }\n  ]\n}"
+    }
+}

@@ -1,0 +1,163 @@
+---------------------------------------------------------------------------
+ErrorResponseException                    Traceback (most recent call last)
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/clientbase.py in _execute_with_arguments(self, func, args_list, *args, **kwargs)
+    580             else:
+--> 581                 return self._call_api(func, *args_list, **kwargs)
+    582         except ErrorResponseException as e:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/clientbase.py in _call_api(self, func, *args, **kwargs)
+    238             else:
+--> 239                 return self._execute_with_base_arguments(func, *args, **kwargs)
+    240 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/clientbase.py in _execute_with_base_arguments(self, func, *args, **kwargs)
+    327         return ClientBase._execute_func_internal(
+--> 328             back_off, total_retry, self._logger, func, _noop_reset, *args, **kwargs)
+    329 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/clientbase.py in _execute_func_internal(cls, back_off, total_retry, logger, func, reset_func, *args, **kwargs)
+    360             except Exception as error:
+--> 361                 left_retry = cls._handle_retry(back_off, left_retry, total_retry, error, logger, func)
+    362 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/clientbase.py in _handle_retry(cls, back_off, left_retry, total_retry, error, logger, func)
+    415             elif error.response.status_code < 500 and error.response.status_code != 408:
+--> 416                 raise error
+    417         elif isinstance(error, ClientRequestError):
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/clientbase.py in _execute_func_internal(cls, back_off, total_retry, logger, func, reset_func, *args, **kwargs)
+    351                 logger.debug("ClientBase: Calling {} with url {}".format(func_name, func_url))
+--> 352                 response = func(*args, **kwargs)
+    353                 if (isinstance(response, Response) and cls._is_retryable_status_code(response.status_code) and
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/operations/artifact_operations.py in get_content_information(self, subscription_id, resource_group_name, workspace_name, origin, container, path, custom_headers, raw, **operation_config)
+    586         if response.status_code not in [200]:
+--> 587             raise models.ErrorResponseException(self._deserialize, response)
+    588 
+
+ErrorResponseException: (UserError) Artifact with Id ExperimentRun/dcid.HD_7fc67ee8-156e-40c1-b415-4c7723806da5_0/outputs/scoring_file_v_1_0_0.py not found in workspace quick-starts-ws-135954
+
+During handling of the above exception, another exception occurred:
+
+ServiceException                          Traceback (most recent call last)
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/artifacts_client.py in download_artifact(self, origin, container, path, output_file_path, _validate_checksum)
+    255             content_info = self._execute_with_workspace_arguments(self._client.artifact.get_content_information,
+--> 256                                                                   origin, container, path)
+    257             if not content_info:
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/workspace_client.py in _execute_with_workspace_arguments(self, func, *args, **kwargs)
+     68     def _execute_with_workspace_arguments(self, func, *args, **kwargs):
+---> 69         return self._execute_with_arguments(func, copy.deepcopy(self._workspace_arguments), *args, **kwargs)
+     70 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/clientbase.py in _execute_with_arguments(self, func, args_list, *args, **kwargs)
+    582         except ErrorResponseException as e:
+--> 583             raise ServiceException(e)
+
+ServiceException: ServiceException:
+	Code: 404
+	Message: (UserError) Artifact with Id ExperimentRun/dcid.HD_7fc67ee8-156e-40c1-b415-4c7723806da5_0/outputs/scoring_file_v_1_0_0.py not found in workspace quick-starts-ws-135954
+	Details:
+
+	Headers: {
+	    "Date": "Mon, 25 Jan 2021 02:13:40 GMT",
+	    "Content-Type": "application/json; charset=utf-8",
+	    "Transfer-Encoding": "chunked",
+	    "Connection": "keep-alive",
+	    "Vary": "Accept-Encoding",
+	    "Request-Context": "appId=cid-v1:2d2e8e63-272e-4b3c-8598-4ee570a0e70d",
+	    "x-ms-response-type": "error",
+	    "x-ms-client-request-id": "13c169a4-9424-48ec-8f4f-427f0fc149ff",
+	    "x-ms-client-session-id": "",
+	    "X-Content-Type-Options": "nosniff",
+	    "x-request-time": "0.049",
+	    "Strict-Transport-Security": "max-age=15724800; includeSubDomains; preload",
+	    "Content-Encoding": "gzip"
+	}
+	InnerException: {
+    "additional_properties": {},
+    "error": {
+        "additional_properties": {
+            "debugInfo": null
+        },
+        "code": "UserError",
+        "severity": null,
+        "message": "Artifact with Id ExperimentRun/dcid.HD_7fc67ee8-156e-40c1-b415-4c7723806da5_0/outputs/scoring_file_v_1_0_0.py not found in workspace quick-starts-ws-135954",
+        "message_format": "Artifact with Id {artifactId} not found in workspace {workspaceName}",
+        "message_parameters": {
+            "artifactId": "ExperimentRun/dcid.HD_7fc67ee8-156e-40c1-b415-4c7723806da5_0/outputs/scoring_file_v_1_0_0.py",
+            "workspaceName": "quick-starts-ws-135954"
+        },
+        "reference_code": null,
+        "details_uri": null,
+        "target": null,
+        "details": [],
+        "inner_error": {
+            "additional_properties": {},
+            "code": "NotFound",
+            "inner_error": {
+                "additional_properties": {},
+                "code": "ArtifactNotFound",
+                "inner_error": null
+            }
+        }
+    },
+    "correlation": {
+        "operation": "6773e8e6e7a29a46a9aa6a1cce7afe56",
+        "request": "a0a2e390957a0c4f"
+    },
+    "environment": "southcentralus",
+    "location": "southcentralus",
+    "time": {},
+    "component_name": "artifact"
+}
+
+During handling of the above exception, another exception occurred:
+
+UserErrorException                        Traceback (most recent call last)
+<ipython-input-26-7dbe15340718> in <module>
+      1 # Download scoring file
+----> 2 brmodel.download_file('outputs/scoring_file_v_1_0_0.py', 'hypscoring.py')
+      3 
+      4 # Download environment file
+      5 brmodel.download_file('outputs/conda_env_v_1_0_0.yml', 'hypenviro.yml')
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/core/run.py in wrapped(self, *args, **kwargs)
+     48                                      "therefore, the {} cannot upload files, or log file backed metrics.".format(
+     49                                          self, self.__class__.__name__))
+---> 50         return func(self, *args, **kwargs)
+     51     return wrapped
+     52 
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/core/run.py in download_file(self, name, output_file_path, _validate_checksum)
+   1972 
+   1973         self._client.artifacts.download_artifact(RUN_ORIGIN, self._container, name, output_file_path,
+-> 1974                                                  _validate_checksum)
+   1975 
+   1976     @_check_for_data_container_id
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/artifacts_client.py in download_artifact(self, origin, container, path, output_file_path, _validate_checksum)
+    261                                _validate_check_sum=_validate_checksum)
+    262         except HttpOperationError as operation_error:
+--> 263             self._handle_http_operation_error(operation_error, origin, container, path)
+    264 
+    265     def download_artifacts_from_prefix(self, origin, container, prefix=None, output_directory=None, output_paths=None,
+
+/anaconda/envs/azureml_py36/lib/python3.6/site-packages/azureml/_restclient/artifacts_client.py in _handle_http_operation_error(self, operation_error, origin, container, path, prefix)
+    506             raise UserErrorException("{0} with path {1} was not found,\n"
+    507                                      "available files include: "
+--> 508                                      "{2}.".format(type_string, path, ",".join(existing_files)))
+    509         else:
+    510             raise operation_error
+
+UserErrorException: UserErrorException:
+	Message: File with path outputs/scoring_file_v_1_0_0.py was not found,
+available files include: azureml-logs/55_azureml-execution-tvmps_7c467f4b7b31e8408ffe4b444fca5d7aa2dee41ebf231a829a0b72fe8b80902b_d.txt,azureml-logs/65_job_prep-tvmps_7c467f4b7b31e8408ffe4b444fca5d7aa2dee41ebf231a829a0b72fe8b80902b_d.txt,azureml-logs/70_driver_log.txt,azureml-logs/75_job_post-tvmps_7c467f4b7b31e8408ffe4b444fca5d7aa2dee41ebf231a829a0b72fe8b80902b_d.txt,azureml-logs/process_info.json,azureml-logs/process_status.json,logs/azureml/103_azureml.log,logs/azureml/job_prep_azureml.log,logs/azureml/job_release_azureml.log,outputs/hyperDrive_4.0_150.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "File with path outputs/scoring_file_v_1_0_0.py was not found,\navailable files include: azureml-logs/55_azureml-execution-tvmps_7c467f4b7b31e8408ffe4b444fca5d7aa2dee41ebf231a829a0b72fe8b80902b_d.txt,azureml-logs/65_job_prep-tvmps_7c467f4b7b31e8408ffe4b444fca5d7aa2dee41ebf231a829a0b72fe8b80902b_d.txt,azureml-logs/70_driver_log.txt,azureml-logs/75_job_post-tvmps_7c467f4b7b31e8408ffe4b444fca5d7aa2dee41ebf231a829a0b72fe8b80902b_d.txt,azureml-logs/process_info.json,azureml-logs/process_status.json,logs/azureml/103_azureml.log,logs/azureml/job_prep_azureml.log,logs/azureml/job_release_azureml.log,outputs/hyperDrive_4.0_150."
+    }
+}
